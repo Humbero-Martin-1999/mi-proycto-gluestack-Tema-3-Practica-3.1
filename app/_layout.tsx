@@ -1,9 +1,9 @@
 // app/_layout.tsx
-import 'react-native-gesture-handler'; // <-- IMPORTANTE: Siempre debe ser la primera línea
 import { config } from '@gluestack-ui/config';
 import { GluestackUIProvider } from '@gluestack-ui/themed';
 import { Drawer } from 'expo-router/drawer';
 import React from 'react';
+import 'react-native-gesture-handler'; // <-- IMPORTANTE: Siempre debe ser la primera línea
 
 export default function RootLayout() {
   return (
@@ -39,6 +39,13 @@ export default function RootLayout() {
             title: 'Display',
           }}
         />
+        {/* --- Pantalla de Registro en Firebase --- */}
+        <Drawer.Screen
+          name="PantallaRegistroFirebase"
+          options={{
+            title: 'Registro en Firebase',
+          }}
+        />
 
         {/* --- 4. El Modal de ejemplo --- */}
         <Drawer.Screen
@@ -62,6 +69,7 @@ export default function RootLayout() {
             drawerItemStyle: { display: 'none' },
           }}
         />
+         
 
       </Drawer>
     </GluestackUIProvider>
